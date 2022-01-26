@@ -46,6 +46,7 @@ const CityWeather = (props: CityWeatherProps) => {
       </div>
     );
   }
+  console.log("weather result", weatherResult)
   return (
     <div data-testid="city-wrapper">
       {weatherResult.cod === 200 && (

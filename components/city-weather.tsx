@@ -37,7 +37,7 @@ export class CityWeather extends Component<CityWeatherProps, CityWeatherState> {
     this.fetchWeatherData(city);
   }
 
-  //fix-bug: when user inputs new city name, it should fetch new weather data again.
+  //fix-bug: when user inputs new city name, it should fetch the updated weather data.
   public componentDidUpdate(prevProps) {
     if (prevProps.city !== this.props.city) {
       this.fetchWeatherData(this.props.city);
@@ -47,7 +47,7 @@ export class CityWeather extends Component<CityWeatherProps, CityWeatherState> {
   public render() {
     const { city } = this.props;
     const { weatherResult } = this.state;
-    //fix-bug: WeatherResult is null until it fetches result, so it should render nothing until it loads correct data.
+    //fix-bug: WeatherResult is null until it fetches result, so it should render nothing until it loads the correct data.
     if (!weatherResult) return null;
     return (
       <div>
